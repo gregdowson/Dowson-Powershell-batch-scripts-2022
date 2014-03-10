@@ -1,0 +1,1 @@
+del /s /q "D:\Root\PUBLIC\Data & Reports\JPM Chase\Call Recordings\current\*.*" 

@@ -1,0 +1,2 @@
+
+pscp.exe -l rmbcards -pw What2Do! 10.0.101.180:/home/rmbcards/UBS.AirTrans.*.csv  "D:\Root\Clients\TEAM UBS ACCOUNTS\UBS Concierge\Daily Lounge Transactions - Any Airport Club\ACTUAL _AIR TRANSACTIONS\Archive"
