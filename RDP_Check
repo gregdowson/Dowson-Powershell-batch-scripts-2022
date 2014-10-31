@@ -1,0 +1,37 @@
+$ServerName = Get-Content "c:\scripts\prod.txt"  
+  
+foreach ($Server in $ServerName) 
+
+{
+
+ if(!(Test-Connection -Cn $ServerName -BufferSize 16 -Count 1 -ea 0 -quiet))
+
+ {
+
+  write-host "Problem connecting to $ServerName" -foregroundcolor “yellow”
+
+  "Flushing DNS"
+
+  ipconfig /flushdns | out-null
+
+  "Registering DNS"
+
+  ipconfig /registerdns | out-null
+
+ "doing a NSLookup for $ServerName"
+
+  nslookup $ServerName
+
+  "Re-pinging $ServerName"
+
+    if(!(Test-Connection -Cn $ServerName -BufferSize 16 -Count 1 -ea 0 -quiet))
+
+     {write-host "Problem still exists in connecting to $ServerName" -foregroundcolor “red”}
+
+      ELSE {write-host "Resolved problem connecting to $ServerName" -foregroundcolor “green”}  #end if
+
+  } # end if
+
+ELSE {write-host "No problems with: $ServerName" -foregroundcolor “green”}
+
+} # end foreach
