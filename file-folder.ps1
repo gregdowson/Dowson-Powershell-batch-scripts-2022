@@ -1,8 +1,8 @@
 <#
 .SYNOPSIS
-   Goes to the directory entered by the user, and in that directory puts the files into folders named by their file names. 
+   Goes to the folder entered by the user, and in that directory puts the files into folders named by their file names without the extension. 
 #>
-$Folder = Read-Host "Enter Directory, i.e C:\scripts"
+$Folder = Read-Host "Enter folder path, i.e. C:\reports"
 
 Get-ChildItem $Folder | Where-Object {!$_.PSIsContainer} | Foreach-Object {
 
