@@ -1,0 +1,1 @@
+import-csv C:\Temp\listofusers.csv | Foreach-Object {add-adgroupmember -Identity $_.group -Members $_.name}

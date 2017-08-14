@@ -1,0 +1,1 @@
+﻿Get-ChildItem –Path  “C:\Users\*\AppDAta\local\temp” –Recurse | Where-Object CreationTime –lt (Get-Date).AddMinutes(-30)| remove-item 
