@@ -15,5 +15,5 @@ Foreach ($i in $Srvs) {
 	If ($file1) {add-content -path $sLogFile -value "$DIR\server.crt exists"}
 	If ($file1) {add-content -path $sLogFile -value "$DIR\server.csr exists"}
 	If ($file1) {add-content -path $sLogFile -value "$DIR\server.key exists"}
-	add-content -path $sLogFile -value "`r"
+	add-content -path $sLogFile -value "r"
 }
