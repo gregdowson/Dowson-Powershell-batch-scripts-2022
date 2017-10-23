@@ -3,4 +3,4 @@ foreach ($server in $servers) {
   $addresses = [System.Net.Dns]::GetHostAddresses($server)
   foreach($a in $addresses) {
     "{0},{1}" -f $server, $a.IPAddressToString
- } |Export-Csv c:\scripts\ips.txt -force}
+ } |Export-Csv c:\scripts\ips.txt -force
