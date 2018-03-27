@@ -1,0 +1,2 @@
+$certhash = (get-liccertificate -adminaddress vmd-xd-mgmt.ds.usfca.edu).certhash
+$license = Get-LicInventory -AdminAddress vmd-xd-mgmt.ds.usfca.edu -CertHash $certhash | ?{($_.licensesinuse -ne "0") -and ($_.LocalizedLicenseProductName -notlike "citrix start-up*")}

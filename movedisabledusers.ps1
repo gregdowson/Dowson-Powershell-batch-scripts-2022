@@ -1,0 +1,2 @@
+﻿Search-ADAccount –AccountDisabled –UsersOnly –SearchBase “OU=Enabled Accts,OU=Netwrix-Deny,DC=ds,DC=usfca,DC=edu” | 
+Move-ADObject –TargetPath “OU=Disabled Accts,OU=Netwrix-Deny,DC=ds,DC=usfca,DC=edu”
